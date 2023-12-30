@@ -1,0 +1,36 @@
+.Container {
+    height: 22vw;
+    width: 18vw;
+    background-color: #E5E4E2;
+    margin: 1rem;
+}
+.OptionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.OptionsContainer button {
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.ImgContainer {
+    width: 18vw;
+    height: 18vw;
+}
+
+.LightIndicator {
+    background-color: #86B049;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+}
+.StatusGroup {
+    display: flex;
+    align-items: center;
+}

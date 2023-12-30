@@ -37,7 +37,12 @@
 
 }
 .NavElement:hover{
-    cursor: crosshair;
+    cursor: pointer;
     border-bottom: 3px solid #2660A4;
     transition: border-bottom-color 0.5s linear;
+}
+
+.LaundryButton {
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
 }
