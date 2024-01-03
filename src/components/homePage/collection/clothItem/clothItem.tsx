@@ -8,9 +8,9 @@ const ClothItem = (props: any) => {
     const [imgUrl, setImgUrl] = useState('');
 
     const handleStatus = () => {
-        if (clothItem.status === 'ready')
-            return 'laundry'
-        return 'ready'
+        if (clothItem.status === 'Ready')
+            return 'Laundry'
+        return 'Ready'
     }
 
     useEffect(() => {
@@ -23,10 +23,10 @@ const ClothItem = (props: any) => {
                 <img className={`${styles.ImgContainer}`} src={`${imgUrl}`} alt={'img'}/>
                 <div className={`${styles.OptionsContainer}`}>
                     <div className={`${styles.StatusGroup}`}>
-                        <div className={`${styles.LightIndicator}`}></div>
-                        <p>Ready</p>
+                        <div className={`${clothItem.status === 'Ready' ? styles.BlueIndicator : styles.RedIndicator}`}></div>
+                        <p>{clothItem.status}</p>
                     </div>
-                    <button onClick={()=> props.handleChangeStatus(clothItem.uniqueKey,handleStatus())}>{clothItem.status === 'ready' ? 'To Laundry' : 'To Closet'}</button>
+                    <button onClick={()=> props.handleChangeStatus(clothItem.uniqueKey,handleStatus())}>{clothItem.status === 'Ready' ? 'To Laundry' : 'To Closet'}</button>
                 </div>
             </div>
 

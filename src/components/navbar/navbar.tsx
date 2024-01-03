@@ -6,7 +6,7 @@ const Navbar = (props: any)=> {
 
 
     const handleNav = (navFocus: string)=> {
-        navFocus === 'laundry' ? props.setFilterNav(navFocus):props.setFilterNav(navFocus);
+        navFocus === 'Laundry' ? props.setFilterNav(navFocus):props.setFilterNav(navFocus);
     }
 
     const  generateRandomId = () => {
@@ -20,7 +20,7 @@ const Navbar = (props: any)=> {
             uniqueKey: generateRandomId(),
             imgUrl: '../../assets/tshirts/1.jpg',
             type: 't-shirt',
-            status: 'ready',
+            status: 'Ready',
             color:'blue'
         }).then()
     }
@@ -36,7 +36,7 @@ const Navbar = (props: any)=> {
                     <button className={`${styles.NavElement}`} onClick={() => handleNav('t-shirt')}>T-Shirts</button>
                     <button className={`${styles.NavElement}`} onClick={() => handleNav('pullover')}>Pullovers</button>
                     <button className={`${styles.NavElement}`} onClick={() => handleNav('jeans')}>Jeans</button>
-                    <button className={`${styles.NavElement} ${styles.LaundryButton}`} onClick={() => handleNav('laundry')}>Laundry</button>
+                    <button className={`${styles.NavElement} ${styles.LaundryButton}`} onClick={() => handleNav('Laundry')}>Laundry</button>
                 </div>
             </div>
         </>

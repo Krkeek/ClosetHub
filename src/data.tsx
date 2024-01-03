@@ -37,7 +37,7 @@ export const clothData: any[] = [
     {
         id: 6,
         imgUrl: '../../assets/tshirts/1.jpg',
-        type: 'laundry',
+        type: 'Laundry',
         status: 'ready',
         color:'blue'
     },

@@ -35,7 +35,7 @@ const Collection = (props: any) => {
                 {
                     data?.map((item: DocumentData)=>{
                         return(
-                            <div key={item.uniqueKey} style={(item.type === props.filter && item.status !== 'laundry')  || (item.status === props.filter && item.status !== 'ready') ? {display: 'block'} : {display: 'none'}  }>
+                            <div key={item.uniqueKey} style={(item.type === props.filter && item.status !== 'Laundry')  || (item.status === props.filter && item.status !== 'Ready') ? {display: 'block'} : {display: 'none'}  }>
                                 <ClothItem getImg={getImg} handleChangeStatus={handleChangeStatus} data={data} setDataHandle={setDataHandle} item={item}  />
                             </div>
                         );
