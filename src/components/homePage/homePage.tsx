@@ -13,6 +13,7 @@ const HomePage = (props: any)=> {
             <div className={`${styles.Container}`}>
                 <Navbar setFilterNav={handleSetFilter}/>
                 <Collection filter={filter} />
+
             </div>
         </>
         )

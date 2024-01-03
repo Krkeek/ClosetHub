@@ -1,16 +1,46 @@
 import styles from './collection.module.css'
 import ClothItem from "./clothItem/clothItem";
-import {clothData} from "../../../data";
-const Collection = (props: any)=>{
+import {useEffect, useState} from "react";
+import {fetchData} from "../../../backend/fetchData";
+import {DocumentData} from "firebase/firestore";
+import {changeStatus} from "../../../backend/changeStatus";
+import {getDownloadURL, ref} from "firebase/storage";
+import {storage} from "../../../firebase";
+
+const Collection = (props: any) => {
+    const [data, setData] = useState<DocumentData>();
+    const setDataHandle = (value: DocumentData) => setData(value);
+
+    useEffect(() => {
+        refreshData().then()
+    }, []);
+
+
+    const refreshData = async ()=> {
+        fetchData().then(fetchedData => setData(fetchedData))
+    }
+
+    const handleChangeStatus = (uniqueKey: string, status: string)=> {
+        changeStatus(uniqueKey, status).then()
+    }
+
+    const getImg = async (clothItem: DocumentData):Promise<string> => {
+        const pathReference = ref(storage, clothItem.imgUrl)
+        return await getDownloadURL(pathReference)
+    }
 
     return(
         <>
             <div className={`${styles.Container}`}>
-                {clothData.map((item)=>(
-                    <div style={item.type === props.filter ? {display: 'block'} : {display: 'none'} } key={item.id}>
-                        <ClothItem item={item}  />
-                    </div>
-                )) }
+                {
+                    data?.map((item: DocumentData)=>{
+                        return(
+                            <div key={item.uniqueKey} style={(item.type === props.filter && item.status !== 'laundry')  || (item.status === props.filter && item.status !== 'ready') ? {display: 'block'} : {display: 'none'}  }>
+                                <ClothItem getImg={getImg} handleChangeStatus={handleChangeStatus} data={data} setDataHandle={setDataHandle} item={item}  />
+                            </div>
+                        );
+                        })
+                }
             </div>
         </>
     );
