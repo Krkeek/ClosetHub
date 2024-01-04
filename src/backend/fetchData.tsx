@@ -9,8 +9,5 @@ export const fetchData = async () => {
     });
 
 
-
-
-
     return fetchedData;
 }

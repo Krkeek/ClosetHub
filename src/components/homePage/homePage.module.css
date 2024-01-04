@@ -36,6 +36,8 @@
     background-size: 55vh; /* Resize the background image to cover the entire container */
     min-height: 90vh;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .LeftSide {

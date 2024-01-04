@@ -34,7 +34,7 @@ const SideBar = (props: any)=> {
                 <button onClick={() => handleNav('pullover')} className={`${styles.NavElement}`}><img src={`${pullover}`} alt={'icon'}/></button>
                 <button onClick={() => handleNav('jeans')} className={`${styles.NavElement}`}><img src={`${jeans}`} alt={'icon'}/></button>
                 <button onClick={() => handleNav('Laundry')} className={`${styles.NavElement}`}><img src={`${laundry}`} alt={'icon'}/></button>
-                <button  onClick={addItem} className={`${styles.NavElement} ${styles.Plus}`}>+</button>
+                <button style={{display: "none"}}  onClick={addItem} className={`${styles.NavElement} ${styles.Plus}`}>+</button>
             </div>
         </>
     );
