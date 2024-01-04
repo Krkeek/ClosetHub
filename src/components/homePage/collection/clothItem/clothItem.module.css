@@ -1,14 +1,19 @@
 .Container {
     height: 22vw;
     width: 18vw;
-    background-color: #E5E4E2;
     margin: 1rem;
+    border-radius: 35px;
 }
 .OptionsContainer {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 1rem;
+    border-radius: 100px;
+    background: #FFF;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+
 }
 
 .OptionsContainer button {
@@ -16,15 +21,21 @@
     font-weight: 700;
     background-color: transparent;
     border: 1px solid black;
+
+}
+.OptionsContainer:hover {
+    background-color: rgba(136, 136, 136, 0.5);
+    transition: background-color 0.3s linear;
 }
 
 .ImgContainer {
     width: 18vw;
     height: 18vw;
+    border-radius: 35px;
 }
 
 .BlueIndicator {
-    background-color: #86B049;
+    background-color: #5CFF59;
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 50%;
@@ -32,7 +43,7 @@
 }
 
 .RedIndicator {
-    background-color: rgba(255, 0, 0, 0.8);
+    background-color: #FF2D2D;
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 50%;
@@ -42,4 +53,12 @@
 .StatusGroup {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.StatusGroup p {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
 }

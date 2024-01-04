@@ -11,7 +11,6 @@ export const changeStatus = async (uniqueKey: string, status: string) => {
             setDoc(doc(db, 'clothData', result.id), { status: status }, { merge: true }).then(()=>
             {
                 console.log('Status changed for '+ result.id);
-                window.location.reload();
             }
          )
         });

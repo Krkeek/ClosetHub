@@ -21,13 +21,16 @@ const ClothItem = (props: any) => {
         <>
             <div className={`${styles.Container}`}>
                 <img className={`${styles.ImgContainer}`} src={`${imgUrl}`} alt={'img'}/>
-                <div className={`${styles.OptionsContainer}`}>
+
+
+                <div  onClick={() => props.handleChangeStatus(clothItem.uniqueKey, handleStatus())} className={`${styles.OptionsContainer}`}>
                     <div className={`${styles.StatusGroup}`}>
+                        <p>{clothItem.status === 'Ready' ? 'In closet' : 'Out if closet'}</p>
                         <div className={`${clothItem.status === 'Ready' ? styles.BlueIndicator : styles.RedIndicator}`}></div>
-                        <p>{clothItem.status}</p>
                     </div>
-                    <button onClick={()=> props.handleChangeStatus(clothItem.uniqueKey,handleStatus())}>{clothItem.status === 'Ready' ? 'To Laundry' : 'To Closet'}</button>
                 </div>
+
+
             </div>
 
         </>

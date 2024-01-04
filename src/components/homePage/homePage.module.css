@@ -1,4 +1,47 @@
 .Container {
     min-height: 100vh;
     width: 100%;
+
+}
+
+.BrandDiv {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Brand {
+    color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 100px;
+    background: #FFF;
+    padding: 0.3rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.Brand img {
+    width: 3rem;
+    margin-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+
+.RightSide {
+    background: #D8EEF4 url('../../assets/bgImg.png') no-repeat bottom right;
+    background-size: 55vh; /* Resize the background image to cover the entire container */
+    min-height: 90vh;
+    width: 100%;
+}
+
+.LeftSide {
+    height: fit-content;
+}
+
+.ContentContainer {
+    display: flex;
 }
