@@ -2,14 +2,13 @@
     height: 22vw;
     width: 18vw;
     margin: 1rem;
-    border-radius: 35px;
 }
 .OptionsContainer {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 1rem;
-    border-radius: 100px;
+    border-radius: 50px;
     background: #FFF;
     cursor: pointer;
     transition: background-color 0.1s linear;
@@ -31,7 +30,6 @@
 .ImgContainer {
     width: 18vw;
     height: 18vw;
-    border-radius: 35px;
 }
 
 .BlueIndicator {
@@ -61,4 +59,39 @@
     color: #000;
     font-size: 1rem;
     font-weight: 700;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /*Tablet*/
+
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+    /*Mobile*/
+    .Container {
+        width: 80%;
+        height: 100%;
+        background-color: white;
+        padding: 1rem 1rem 0.5rem 1rem;
+        margin: 1rem auto;
+        border-radius: 20px;
+    }
+
+    .ImgContainer {
+        width: 100%;
+        height: 100%;
+    }
+
+    .OptionsContainer {
+        border-radius: 50px;
+        background: #fff;
+        cursor: pointer;
+        transition: background-color 0.1s linear;
+        margin-bottom: 0.5rem;
+    }
+
+
 }

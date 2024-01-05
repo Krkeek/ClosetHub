@@ -2,3 +2,19 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /*Tablet*/
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+    /*Mobile*/
+    .Container {
+        display: block;
+    }
+
+
+}

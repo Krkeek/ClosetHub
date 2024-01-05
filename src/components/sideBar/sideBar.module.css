@@ -3,6 +3,10 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: space-around;
+    border-right: 1px solid rgba(14, 57, 70, 0.25);;
+    min-height: 100%;
+
 }
 
 .NavElement {
@@ -11,7 +15,15 @@
     border-radius: 50%;
     border: none;
     filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
-    margin-bottom: 5vh;
+}
+
+.ActiveNavElement{
+    height: 7vw;
+    width: 7vw;
+
+}
+.ActiveNavElement img {
+    width: 4.5rem !important;
 }
 .NavElement img {
     width: 3rem;
@@ -23,5 +35,107 @@
     background-color: black;
     color: white;
     font-size: 4rem;
-    padding-bottom: 0.5rem;
+    transition: background-color 0.3s linear;
+}
+
+.NavElement:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+    transition: background-color 0.5s linear;
+}
+
+.ButtonDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    border-right: 4px solid transparent;
+}
+.ActiveButtonDiv {
+    border-right: 4px solid black;
+}
+.BrandDiv {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5rem;
+    width: 50%;
+    padding: 0.5rem 1rem;
+
+}
+.BrandDiv img {
+    width: 2rem;
+}
+.BrandDiv p {
+    text-align: center;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /*Tablet*/
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+    /*Modile*/
+    .BrandDiv {
+        display: none;
+    }
+    .Container {
+        flex-flow: row;
+        width: fit-content;
+        min-height: 8vh;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        margin: 0;
+        padding: 0;
+
+    }
+    .ButtonDiv {
+        border: none;
+
+    }
+
+    .ActiveButtonDiv {
+        border-right: none;
+
+    }
+    .NavElement {
+        height: 9vh;
+        width: 9vh;
+        background-color: transparent;
+    }
+
+    .NavElement img {
+        width: 2rem;
+    }
+
+    .ActiveNavElement {
+        height: 9vh;
+        width: 9vh;
+        background-color:white;
+
+    }
+    .ActiveNavElement img {
+        width: 2rem !important;
+
+    }
+    .NavElement:hover {
+        background-color:white;
+        transition: background-color 0.5s linear;
+    }
+
+
+
+
+
+
 }

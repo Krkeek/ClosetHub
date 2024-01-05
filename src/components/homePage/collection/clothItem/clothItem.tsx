@@ -1,6 +1,6 @@
 import styles from './clothItem.module.css'
 // @ts-ignore
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {getDownloadURL, ref} from "firebase/storage";
 import {storage} from "../../../../firebase";
 import {changeStatus} from "../../../../backend/changeStatus";
@@ -56,7 +56,7 @@ const ClothItem = (props: any) => {
 
                 <div  onClick={() => handleChangeStatus(clothItem.uniqueKey, handleStatus())} className={`${styles.OptionsContainer}`}>
                     <div className={`${styles.StatusGroup}`}>
-                        <p>{clothItem.status === 'Ready' ? 'In closet' : 'Out if closet'}</p>
+                        <p>{clothItem.status === 'Ready' ? 'In closet' : 'Out of closet'}</p>
                         <div className={`${clothItem.status === 'Ready' ? styles.BlueIndicator : styles.RedIndicator}`}></div>
                     </div>
                 </div>

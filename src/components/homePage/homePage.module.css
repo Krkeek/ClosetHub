@@ -1,49 +1,185 @@
 .Container {
     min-height: 100vh;
+    max-height: 100vh !important;
     width: 100%;
 
 }
 
-.BrandDiv {
+.TopDiv {
     height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    margin: 0 auto;
 }
-.Brand {
-    color: #000;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 700;
-    border-radius: 100px;
-    background: #FFF;
-    padding: 0.3rem 1.6rem;
+.TopDiv button {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    border-radius: 100px;
+    background-color: #0E3946;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-right: 2.5rem;
 }
-.Brand img {
-    width: 3rem;
-    margin-bottom: 1rem;
-    padding-right: 0.5rem;
+.TopDiv button img {
+    width: 2.5rem;
 }
-
 
 .RightSide {
     background: #D8EEF4 url('../../assets/bgImg.png') no-repeat bottom right;
     background-size: 55vh; /* Resize the background image to cover the entire container */
-    min-height: 90vh;
+    height: 90vh;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    padding-left: 2rem;
 }
 
 .LeftSide {
-    height: fit-content;
+    height: 100vh;
 }
 
 .ContentContainer {
     display: flex;
+}
+.SectionTitle {
+    color: #0E3946;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.SectionTitle img {
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+.BrandDiv {
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5rem;
+    width: 50%;
+    padding: 0.5rem 1rem;
+
+}
+.BrandDiv img {
+    width: 2rem;
+}
+.BrandDiv p {
+    text-align: center;
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /*Tablet*/
+
+    .TopDiv button {
+        font-size: 0.9rem;
+
+
+    }
+    .TopDiv button img {
+        width: 1.5rem;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+    /*Modile*/
+    .Container {
+        background: #D8EEF4 url('../../assets/mobile/bg.png') no-repeat center;
+        background-size: cover; /* Resize the background image to cover the entire container */
+
+
+    }
+    .RightSide {
+        overflow: scroll;
+        background: none;
+        max-height: 79vh;
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .LeftSide {
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ContentContainer {
+        flex-flow: column;
+        flex-direction: column-reverse;
+    }
+
+    .TopDiv {
+        display: flex;
+        justify-content: space-between;
+        min-width: 100%;
+    }
+    .BrandDiv {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 40%;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        margin-left: 1rem;
+
+    }
+    .BrandDiv img {
+        width: 2rem;
+    }
+    .BrandDiv p {
+        margin: 0;
+    }
+
+    .TopDiv button {
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: none;
+        padding: 0.7rem 0.7rem;
+        box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.25);
+        background-color: white;
+        border-radius: 100%;
+        margin-right: 1rem;
+    }
+    .TopDiv button img {
+        width: 2rem;
+        filter: brightness(0);
+
+    }
+
+    .AddClothesText {
+        display: none;
+    }
+
+    .SectionTitle {
+        color: white;
+        font-size: 2rem;
+        margin-left: 2rem;
+    }
+
+    .SectionTitle img {
+        display: none;
+
+    }
+
+
+
 }
