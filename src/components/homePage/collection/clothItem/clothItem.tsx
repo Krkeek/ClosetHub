@@ -25,7 +25,8 @@ const ClothItem = (props: any) => {
     }
 
     const handleChangeStatus = async (uniqueKey: string, status: string)=> {
-        if (currentUser){
+
+          if (currentUser){
             await changeStatus(uniqueKey, status)
                 .then(()=>{
                     props.setDataChanged()

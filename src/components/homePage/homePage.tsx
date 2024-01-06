@@ -14,6 +14,8 @@ import logo from "../../assets/logo.png";
 import logoMobile from '../../assets/mobile/logo.png'
 import LoginPage from "../loginPage/loginPage";
 import {authUserContext} from "../../auth/authUserContext";
+import {checkAuthentication} from "../../auth/authentication";
+
 
 
 const HomePage = () => {
@@ -29,7 +31,7 @@ const HomePage = () => {
         fetchData().then(fetchedData => setData(fetchedData));
     }, []);
 
-    const {currentUser} = useContext(authUserContext);
+    const {currentUser,loginUser} = useContext(authUserContext);
 
     const setTitle = ()=> {
         switch (filter){
@@ -75,6 +77,16 @@ const HomePage = () => {
             setOpenLoginModalFn();
         }
     }
+
+    useEffect(() => {
+             checkAuthentication()
+            .then((user) => {
+                if (user)
+                loginUser(user)
+            })
+
+    }, []);
+
     return(
         <>
                 <div className={`${styles.Container}`}>
