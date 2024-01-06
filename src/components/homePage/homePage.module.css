@@ -65,6 +65,7 @@
     border-radius: 5rem;
     width: 50%;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 
 }
 .BrandDiv img {

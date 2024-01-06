@@ -1,15 +1,17 @@
 import styles from './clothItem.module.css'
 // @ts-ignore
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {getDownloadURL, ref} from "firebase/storage";
 import {storage} from "../../../../firebase";
-import {changeStatus} from "../../../../backend/changeStatus";
+import {changeStatus} from "../../../../controllers/changeStatus";
 import {DocumentData} from "firebase/firestore";
+import {authUserContext} from "../../../../auth/authUserContext";
 
 
 const ClothItem = (props: any) => {
     const clothItem = props.item;
     const [imgUrl, setImgUrl] = useState('');
+    const {currentUser} = useContext(authUserContext);
 
     const handleStatus = () => {
         if (clothItem.status === 'Ready')
@@ -23,14 +25,19 @@ const ClothItem = (props: any) => {
     }
 
     const handleChangeStatus = async (uniqueKey: string, status: string)=> {
-         await changeStatus(uniqueKey, status)
-            .then(()=>{
-                props.setDataChanged()
-                //Edit the local Area
-                const updatedArray = updateStatusLocally(props.data,uniqueKey, status)
-                props.setData(updatedArray)
+        if (currentUser){
+            await changeStatus(uniqueKey, status)
+                .then(()=>{
+                    props.setDataChanged()
+                    //Edit the local Area
+                    const updatedArray = updateStatusLocally(props.data,uniqueKey, status)
+                    props.setData(updatedArray)
 
-            })
+                })
+        }
+        else {
+            props.setOpenLoginModal()
+        }
     }
 
     const updateStatusLocally = (clothesArray: DocumentData, itemId: string, newStatus: string) => {

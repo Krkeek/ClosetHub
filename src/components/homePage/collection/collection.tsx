@@ -16,7 +16,7 @@ const Collection = (props: any) => {
                         return (
                             <div key={item.uniqueKey}
                                  style={(item.type === props.filter && item.status !== 'Laundry') || (item.status === props.filter && item.status !== 'Ready') ? {display: 'block'} : {display: 'none'}}>
-                                <ClothItem setData={props.setData} data={props.data} setDataChanged={setDataChangeFn}
+                                <ClothItem setOpenLoginModal={props.setOpenLoginModal} setData={props.setData} data={props.data} setDataChanged={setDataChangeFn}
                                            item={item}/>
                             </div>
                         );
